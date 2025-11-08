@@ -27,8 +27,6 @@ function getRandomColor() {
     return color;
 }
 
-// let opacityArray = [];
-
 function buildGrid(size) {
     let opacityArray = [];
     for (let row = 0; row < size; row++) {
@@ -47,8 +45,8 @@ function buildGrid(size) {
             cell.style.backgroundColor = "white";
             cell.addEventListener("mouseenter", () => {
                 cell.style.cursor = "pointer";
+                cell.style.backgroundColor = getRandomColor();
                 if (opacityArray[row][col] === 0) {
-                    cell.style.backgroundColor = getRandomColor();
                     opacityArray[row][col] += 0.1;
                     cell.style.opacity = opacityArray[row][col];
                 } else if (opacityArray[row][col] < 1){
